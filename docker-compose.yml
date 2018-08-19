@@ -3,10 +3,10 @@ services:
   app:
     container_name: docker-node-mongo
     restart: always
-    build: .
+    build: . #we want build a docker file. here,  we're referring to the file in the current dir
     ports:
       - '80:3000'
-    links:
+    links: #linking app service(or container) with mongo
       - mongo
   mongo:
     container_name: mongo
